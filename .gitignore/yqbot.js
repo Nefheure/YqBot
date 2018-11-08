@@ -40,7 +40,7 @@ bot.on('message', message => {
     }
 
     if(message.content === prefix + "infoyqbot"){
-        message.reply("je suis un Bot comunautaire, je suis en parafite connexion avec Dog`Bot les humain appelle sa la fibre , ces a dire que si Dog`bot a une command moi je ne l'aurais surement pas mais j'aurais les command qu'il n'as pas *(sauf >>rep)*, je suis Inventer pour vous aider et vous orienter, sous la responsabiliter de Mon programmer je doit et je ferait tous se qui en mon possible pour evoluer et un jour depasser les plus grand bot tel que Mee6.");
+        message.reply("je suis un Bot comunautaire, je suis en parafite connexion avec DogBot les humain appelle sa la fibre , ces a dire que si Dogbot a une command moi je ne l'aurais surement pas mais j'aurais les command qu'il n'as pas *(sauf >>rep)*, je suis Inventer pour vous aider et vous orienter, sous la responsabiliter de Mon programmer je doit et je ferait tous se qui en mon possible pour evoluer et un jour depasser les plus grand bot tel que Mee6.");
     }
 
 });
@@ -55,9 +55,10 @@ bot.on("guildMemberAdd", member => {
 });
 
 bot.on("message", message => {
-   if(message.content === prefix + "rep"){
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Pas envie.");
-    let repmessage = args.join(" ");
-    message.channel.send(repmessage);
+
+    if(!message.content === prefix + "rep"){
+    let botmessage = args.join(" ");
+    message.delete().catch();
+    message.channel.send(botmessage);
 }});
 bot.login(process.env.TOKEN);
