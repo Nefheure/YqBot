@@ -56,9 +56,9 @@ bot.on("guildMemberAdd", member => {
 
 bot.on("message", message => {
 
-    if(!message.content === prefix + "rep"){
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("non.")
     let botmessage = args.join(" ");
     message.delete().catch();
     message.channel.send(botmessage);
-}});
+});
 bot.login(process.env.TOKEN);
