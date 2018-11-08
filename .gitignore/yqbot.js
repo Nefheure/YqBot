@@ -45,11 +45,18 @@ bot.on('message', message => {
 });
 
 
-bot.on("guildMemberAdd", member => {
+bot.on('guildMemberAdd', member => {
 
     let role = memeber.guild.roles.find("name", "💪|Sub");
     member.guild.channels.find("name", "✅ʙɪᴇɴᴠᴇɴᴜᴇ").send(`${member} a rejoind le serveur !:hugging:`)
 
     member.addRole(role)
 });
+
+bot.on('message', message => {
+   if(message.content === prefix + "rep"){
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("non.");
+    let repmessage = args.join(" ");
+    message.channel.send(repmessage);
+}});
 bot.login(process.env.TOKEN);
