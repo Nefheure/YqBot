@@ -22,7 +22,6 @@ bot.on('message', message => {
           .addField(">>help", "Vous Montre le Stockage de command.")
           .addField(">>link", "Vous envoie un lien vers la chaine youtube de MrYqoshhFX")
           .addField(">>insta", "Vous envoie un lien ver l'instagram de MrYqoshhFX.")
-          .addField(">>rep", "Peroquet au rapport !")
           .addField(">>infoyqbot", "Description du bot.")
           .setFooter("YqBot, par Neferr.")
           message.channel.send(aide_embed);
@@ -40,7 +39,7 @@ bot.on('message', message => {
     }
 
     if(message.content === prefix + "infoyqbot"){
-        message.reply("je suis un Bot comunautaire, je suis en parafite connexion avec DogBot les humain appelle sa la fibre , ces a dire que si Dogbot a une command moi je ne l'aurais surement pas mais j'aurais les command qu'il n'as pas *(sauf >>rep)*, je suis Inventer pour vous aider et vous orienter, sous la responsabiliter de Mon programmer je doit et je ferait tous se qui en mon possible pour evoluer et un jour depasser les plus grand bot tel que Mee6.");
+        message.reply("je suis un Bot comunautaire, je suis en parafite connexion avec DogBot les humain appelle sa la fibre , ces a dire que si Dogbot a une command moi je ne l'aurais surement pas mais j'aurais les command qu'il n'as pas , je suis Inventer pour vous aider et vous orienter, sous la responsabiliter de Mon programmer je doit et je ferait tous se qui en mon possible pour evoluer et un jour depasser les plus grand bot tel que Mee6.");
     }
 
 });
@@ -52,13 +51,5 @@ bot.on("guildMemberAdd", member => {
     member.guild.channels.find("name", "✅ʙɪᴇɴᴠᴇɴᴜᴇ").send(`${member} a rejoind le serveur !:hugging:`)
 
     member.addRole(role)
-});
-
-bot.on("message", message => {
-
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("non.")
-    let botmessage = args.join(" ");
-    message.delete().catch();
-    message.channel.send(botmessage);
 });
 bot.login(process.env.TOKEN);
