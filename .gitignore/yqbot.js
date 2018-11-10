@@ -7,8 +7,8 @@ var bot = new Discord.Client();
 
 bot.on("ready", function()  {
     console.log("Yqbot Opperationnel !");
-    bot.user.setActivity(">>aide")
-    bot.user.setStatus("online")
+    bot.user.setActivity("Miise aJour...")
+    bot.user.setStatus("dnd")
 
 });
 
